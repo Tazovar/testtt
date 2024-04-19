@@ -1,0 +1,13 @@
+
+<div class="hotels_container">
+    <ng-container *ngIf="data$ | async as data;else loading">
+    <ng-container *ngFor="let hotel of data">
+    <app-hotel [hotel]="hotel"></app-hotel>
+    </ng-container>
+    </ng-container>
+</div>
+
+
+<ng-template #loading>
+<h2 class="loading">loading</h2>
+</ng-template>

@@ -1,0 +1,79 @@
+<main>
+    <div class="center_container">
+        <div class="carousel_container">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button *ngFor="let button of data?.images; let i = index" 
+                            type="button" 
+                            data-bs-target="#carouselExampleIndicators" 
+                            [attr.data-bs-slide-to]="i" 
+                            [ngClass]="{'active': i === 0}"
+                            [attr.aria-label]="'Slide ' + (i + 1)"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item" *ngFor="let img of data?.images; let i = index" [ngClass]="{'active': i === 0}">
+                        <img [src]="img.source" class="d-block w-100" alt="Slide {{i + 1}}">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+
+
+
+        <div class="reservation_container">
+            <div class="reservation_center_container">
+                <form #myForm="ngForm" (ngSubmit)="bookRoom()">
+                    <p>{{data?.name}}</p>
+                    <p>Price - {{data?.pricePerNight  | currency}}</p>
+                    <hr>
+                    <label for="checkIn">Check-in</label>
+                    <input required type="date" #checkIn="ngModel" [(ngModel)]="bookingData.checkInDate" name="checkIn" >
+                    <div class="error" *ngIf="checkIn.invalid && (checkIn.dirty || checkIn.touched)">
+                        <div class="error-message" *ngIf="checkIn.hasError('required')">Check-in date is required.</div>
+                    </div>
+                    
+                    <label for="checkOut">Check-out</label>
+                    <input required type="date" #checkOut="ngModel" [(ngModel)]="bookingData.checkOutDate" name="checkOut" [min]="bookingData.checkInDate">
+                    <div class="error" *ngIf="checkOut.invalid && (checkOut.dirty || checkOut.touched)">
+                        <div  class="error-message" *ngIf="checkOut.hasError('required')">Check-out date is required.</div>
+                    </div>
+                    
+                    <label for="customerName">Customer Name</label>
+                    <input required type="text" #cusName="ngModel" [(ngModel)]="bookingData.customerName" name="customerName" placeholder="Customer Name">
+                    <div class="error" *ngIf="cusName.invalid && (cusName.dirty || cusName.touched)">
+                        <div  class="error-message" *ngIf="cusName.hasError('required')">Customer Name is required.</div>
+                    </div>
+                    <label for="customerPhone">Customer Phone</label>
+                    <input required type="text" #CusPhone="ngModel" [(ngModel)]="bookingData.customerPhone" name="customerPhone" placeholder="phone">
+                    <div class="error" *ngIf="CusPhone.invalid && (CusPhone.dirty || CusPhone.touched)">
+                        <div  class="error-message" *ngIf="CusPhone.hasError('required')">Customer Phone</div>
+                    </div>
+                    <button [disabled]="myForm.invalid" type="submit">Book Now</button>
+                </form>
+                
+            </div>
+        </div>
+        
+    </div>
+</main>
+
+
+<div class="title_container_for_other_rooms">
+    <h1>Other rooms</h1>
+</div>
+
+<div class="other_rooms_container">
+    <ng-container *ngIf="allRoom$ | async as allRooms">
+<ng-container *ngFor="let room of allRooms">
+<app-room [room]="room"></app-room>
+</ng-container>
+    </ng-container>
+</div>

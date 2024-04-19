@@ -1,0 +1,20 @@
+
+<div class="card">
+    <h5 class="card-header">{{data?.name}}</h5>
+    <div class="card-body">
+      <h5 class="card-title">{{data?.address}}</h5>
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      <button mat-button disabled>
+          <a class="btn btn-primary" >{{data?.address}}</a>
+      </button>
+    </div>
+  </div>
+<app-filter (filterBodyEmiter)="filterBodyEmiterSubscriber($event)"></app-filter>
+
+
+
+<div class="main_rooms_container">
+    <ng-container *ngFor="let eachHotelRoom of data?.rooms">
+    <app-room [room]="eachHotelRoom"></app-room>
+    </ng-container>
+</div>

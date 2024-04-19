@@ -1,0 +1,108 @@
+
+
+.center_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+
+main{
+    padding: 50px;
+}
+
+.carousel_container {
+    width: 80%; 
+    margin-bottom: 20px;
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: auto;
+}
+
+button:disabled{
+    cursor: none;
+    opacity: 0.5;
+}
+.carousel-indicators {
+    margin-bottom: 10px;
+}
+
+.carousel-indicators button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    margin: 0 5px;
+}
+
+.carousel-indicators button.active {
+    background-color: #007bff;
+    border-radius: 50%;
+}
+
+.reservation_container {
+    width: 80%; 
+}
+
+.reservation_center_container {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.reservation_center_container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.reservation_center_container label {
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.reservation_center_container input[type="text"],
+.reservation_center_container input[type="date"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: calc(100% - 20px);
+}
+
+.reservation_center_container button {
+    padding: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.reservation_center_container button:hover {
+    background-color: #218838;
+}
+
+.other_rooms_container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: scroll;
+    gap: 10px;
+}
+.title_container_for_other_rooms{
+    text-align: center;
+}
+
+@media screen and (max-width:900px) {
+    .center_container{
+        flex-wrap: wrap !important;
+    }
+}

@@ -1,0 +1,23 @@
+<app-banner></app-banner>
+
+
+<div class="title_contaienr">
+    <div class="left_border_for_title b"></div>
+    <h1>Guests Favorite Rooms</h1>
+    <div class="right_border_for_title b"></div>
+</div>
+<div class="main_contaienr_for_hotels">
+    <div class="center_container_for_main_container_hotels">
+        <ng-container *ngIf="roomData$ | async as roomData;else loading">
+            <ng-container *ngFor="let room of roomData.slice(0,6)">
+                <app-room [room]="room"></app-room>
+        </ng-container>
+        </ng-container>
+    </div>
+</div>
+   
+
+
+<ng-template #loading>
+    <h2 class="loading">loading...</h2>
+</ng-template>

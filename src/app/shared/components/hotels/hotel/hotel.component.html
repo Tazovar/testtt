@@ -1,0 +1,8 @@
+<div class="hotel-container">
+    <img [src]="hotel.featuredImage" alt="Hotel Image">
+    <p>{{ hotel.name }}</p>
+    <h2>{{ hotel.address }}</h2>
+    <h2>{{ hotel.city }}</h2>
+    <button (click)="onShowMoreBtnClick(hotel.id)">View rooms</button>
+  </div>
+  

@@ -1,0 +1,47 @@
+<button class="btn btn-danger" (click)="deleteBooking()">Cancel Booking</button>
+<div *ngIf="room">
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Property</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ID</td>
+                    <td>{{ room?.id }}</td>
+                </tr>
+                <tr>
+                    <td>Check-in Date</td>
+                    <td>{{ room.checkInDate }}</td>
+                </tr>
+                <tr>
+                    <td>Check-out Date</td>
+                    <td>{{ room.checkOutDate }}</td>
+                </tr>
+                <tr>
+                    <td>Total Price</td>
+                    <td>{{ room.totalPrice }}</td>
+                </tr>
+                <tr>
+                    <td>Confirmed</td>
+                    <td>{{ room.isConfirmed }}</td>
+                </tr>
+                <tr>
+                    <td>Customer Name</td>
+                    <td>{{ room.customerName }}</td>
+                </tr>
+                <tr>
+                    <td>Customer ID</td>
+                    <td>{{ room.customerId }}</td>
+                </tr>
+                <tr>
+                    <td>Customer Phone</td>
+                    <td>{{ room.customerPhone }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

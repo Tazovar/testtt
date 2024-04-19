@@ -1,0 +1,13 @@
+
+<div class="main_container">
+    <ng-container *ngIf="data;else loading">
+        <ng-container *ngFor="let dt of data">
+            <app-booked (idEmitter)="idEmitterSub($event)" [room]="dt"></app-booked>
+        </ng-container>
+    </ng-container>
+</div>
+
+
+<ng-template #loading>
+<h2 style="text-align: center;">loading</h2>
+</ng-template>

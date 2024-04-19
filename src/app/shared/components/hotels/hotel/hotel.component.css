@@ -1,0 +1,45 @@
+
+.hotel-container {
+    text-align: center;
+    margin-bottom: 20px;
+    border: 1px solid gainsboro;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  
+  .hotel-container p {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .hotel-container h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .hotel-container img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+
+  .hotel-container button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+
+  .hotel-container button:hover {
+    background-color: #0056b3;
+  }
+  

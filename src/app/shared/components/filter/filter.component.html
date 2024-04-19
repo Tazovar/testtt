@@ -1,0 +1,27 @@
+<form #form="ngForm" (ngSubmit)="submit(form)">
+  <input ngModel name="priceFrom" type="number" placeholder="Price from" >
+
+  <input ngModel name="priceTo" type="number" placeholder="Price to" >
+
+  <select ngModel name="roomTypeId" >
+    <option value="" selected disabled>please select</option>
+    <option value="1">Single</option>
+    <option value="2">Double</option>
+    <option value="3">Deluxe</option>
+  </select>
+
+  <input type="date" ngModel name="checkIn" placeholder="Check-in" >
+
+  <input type="date" ngModel name="checkOut" placeholder="Check-out" >
+
+  <select ngModel name="maximumGuests" id="" >
+    <option value="">Please select</option>
+    <option value="1">1 adult</option>
+    <option value="2">2 adult</option>
+    <option value="3">3 adult</option>
+    <option value="4">4 adult</option>
+    <option value="5">5 adult</option>
+  </select>
+
+  <button type="submit" >Submit</button>
+</form>

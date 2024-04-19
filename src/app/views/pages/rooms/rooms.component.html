@@ -1,0 +1,14 @@
+<app-filter (filterBodyEmiter)="filterBodyEmiterSub($event)"></app-filter>
+<div class="room_container">
+<ng-container *ngIf="roomsData$ | async as roomsData;else noResult">
+    <ng-container *ngFor="let room of roomsData">
+        <app-room [room]="room"></app-room>
+    </ng-container>
+</ng-container>
+</div>
+
+
+
+<ng-template #noResult>
+<h2>loading...</h2>
+</ng-template>

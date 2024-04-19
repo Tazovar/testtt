@@ -1,0 +1,17 @@
+<div class="card_container">
+    <div class="image_container">
+        <img src="{{room.images[0].source}}" alt="Room Image">
+    </div>
+    <div class="content_container">
+        <div class="name_container">
+            <h3>{{room.name}}</h3>
+        </div>
+        <div class="price_container">
+            <p>{{room.pricePerNight | currency:'EUR'}}</p>
+            <p>a night</p>
+        </div>
+        <div class="button_container">
+            <button mat-raised-button [routerLink]="['/roomDetail', room.id]" color="primary">Book now</button>
+        </div>
+    </div>
+</div>
